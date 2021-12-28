@@ -23,7 +23,7 @@ class Pessoa{
 
 		while($lista = $listagem->fetch(PDO::FETCH_ASSOC))
 		{
-			echo "<li>  Nome: ".$lista["nome"]."| Telefone: ".$lista["telefone"]." | Email: ".$lista["email"]."</li>"; 
+			echo "<li id='user_".$lista["id"]."'>  Nome: ".$lista["nome"]."| Telefone: ".$lista["telefone"]." | Email: ".$lista["email"]."</li>"; 
 		}
 	
 	}
