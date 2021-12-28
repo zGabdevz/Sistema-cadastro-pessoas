@@ -1,7 +1,8 @@
 <?php
+#classes
 include('classes/classes.php');
-$include('conexao.php');
-$conn = new Pessoa('cadastro_db','localhost','root', '');
+#conexao com banco de dados
+include('config/conexao.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +38,12 @@ $conn = new Pessoa('cadastro_db','localhost','root', '');
 				<label for="nome">Nome: </label><br>
 				<input type="name" name="nome" placeholder="Digite.." />
 				  <br>
-					<label for="telefone">Telefone: </label><br>
-					<input type="name" name="telefone" placeholder="Digite.."/>
-					  <br>
-						<label for="nome">E-mail: </label><br>
-						<input type="email" name="email" placeholder="Digite.."/>
-						  <br>
+				<label for="telefone">Telefone: </label><br>
+				<input type="name" name="telefone" placeholder="Digite.."/>
+				  <br>
+				<label for="nome">E-mail: </label><br>
+				<input type="email" name="email" placeholder="Digite.."/>
+				  <br>
 				<input type="submit" name="submit"/><!--------FORMULARIO DE CADASTRO---------->
 			</form>
 

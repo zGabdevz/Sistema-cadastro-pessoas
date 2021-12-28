@@ -20,11 +20,10 @@
 		.container{
 
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
 			flex-wrap: wrap;
 
 			margin-top:5vh;
-
 			height:100%;
 
 		}
@@ -32,17 +31,43 @@
 
 			color:#ffff;
 			background-color:#2E3740;
+
 			border: 1px solid black;
+			border-radius:20px;
 
-			padding:10vh;
+			padding:5vh;
+            margin-right: 5px;
 
-			width:30%;
-			height: 100%;
+            width:200px;
+            height:200px;
 
 		}
+        .form-cadastro > p{
+
+            font-size: 10px;
+
+        }
 		.lista-pessoa{
 
-			border: 1px solid black;
-			width:40%;
-
+            font-size:10px;
+			
 		}
+        .lista{
+
+            border: 1px solid black;
+
+        }
+		.opcoes{
+
+            background-color:#2E3740; 
+            color:white;
+
+            align-items:center;
+			
+		}
+        .opcoes > li{
+
+            font-size: 10px;
+            color:white;
+			
+        }

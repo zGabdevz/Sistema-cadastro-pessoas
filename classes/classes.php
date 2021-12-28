@@ -23,7 +23,12 @@ class Pessoa{
 
 		while($lista = $listagem->fetch(PDO::FETCH_ASSOC))
 		{
-			echo "<li id='user_".$lista["id"]."'>  Nome: ".$lista["nome"]."| Telefone: ".$lista["telefone"]." | Email: ".$lista["email"]."</li>"; 
+			
+			$id = $lista["id"];
+            $button_edit = "<div class='opcoes'><a href='index.php?editar_id=".$id."'>Editar </a><a href='index.php?excluir_id=".$id."'>Excluir</a></div>";
+
+			echo "<li id='user_".$id."'>  Nome: ".$lista["nome"]." | Telefone: ".$lista["telefone"]." | Email: ".$lista["email"].$button_edit."</li>"; 
+			
 		}
 	
 	}
