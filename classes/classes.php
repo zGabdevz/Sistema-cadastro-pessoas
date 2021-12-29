@@ -26,7 +26,7 @@ class Pessoa{
 
 	public function buscarDados(){
 
-		$listagem = $this->pdo->prepare("SELECT * FROM pessoas");
+		$listagem = $this->pdo->prepare("SELECT * FROM pessoas ORDER BY id DESC");
 		$listagem->execute();
 
 		while($lista = $listagem->fetch(PDO::FETCH_ASSOC))
