@@ -2,7 +2,7 @@
 #classes
 include('classes/classes.php');
 #conexao com banco de dados
-include('config/conexao.php'); 
+include('conexao.php'); 
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +48,7 @@ include('config/conexao.php');
 			</form>
 
 			<!--------Cadastrar pessoa---------->
-			<?php
+			<?php 
 
 			$nome = addslashes($_POST["nome"]);
 			$telefone = addslashes($_POST["telefone"]);
@@ -58,9 +58,18 @@ include('config/conexao.php');
 			 {
 				$conn->cadastrarUsuario($nome, $telefone, $email);
 			 }	
-			?>	
+			?>
 			<!--------Cadastrar pessoa---------->
 
+
+			<!--------Excluir dado---------->
+			<?php 
+				$id = $_GET["excluir_id"];
+				if($conn->excluirDado($id)){
+					header('Location: index.php');
+				}
+			?>
+			<!--------Excluir dado---------->
 
 		</div>
 		<div class="lista-pessoa">
