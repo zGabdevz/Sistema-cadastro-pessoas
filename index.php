@@ -91,10 +91,12 @@ include('conexao.php');
 
 
 	<footer>
-		<hr>
-		<p>Todos os direitos reservados à </p><a style="color: red;" href="https://github.com/zGabdevz">zGabdevz<a/>
-		<p> Feito e atualizado com dedicação</p>
-		<p>2022</p>
+		<div class="footer">
+		  <hr>
+		  <p>Todos os direitos reservados.</p>
+		  <a href="https://github.com/zGabdevz" style="color:red;">zGabdevz</a>
+		  <p>2022</p>
+		</div>
 	</footer>
 </body>
 </html>
