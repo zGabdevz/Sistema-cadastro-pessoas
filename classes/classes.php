@@ -32,10 +32,23 @@ class Pessoa{
 		while($lista = $listagem->fetch(PDO::FETCH_ASSOC))
 		{
 			$id = $lista["id"];
-            $button_edit = "<div class='opcoes'><a href='index.php?editar_id=".$id."'>Editar </a><a href='index.php?excluir_id=".$id."'>Excluir</a></div>";
+            $button_edit = "<div class='opcoes'><a style='color: white;' href='index.php?editar_id=".$id."'>Editar </a><a style='color: white;' href='index.php?excluir_id=".$id."'>Excluir</a></div>";
 			echo "<li id='user_".$id."'>  Nome: ".$lista["nome"]." | Telefone: ".$lista["telefone"]." | Email: ".$lista["email"].$button_edit."</li>"; 
 		}
 	
+	}
+	
+	public function editarDado($id){
+		$editar = $this->pdo->prepare("SELECT * FROM pessoas WHERE id = :id");
+		$editar->bindValue(':id',$id);
+		$editar->execute();
+		$res = array();
+		while($res = $editar->fetch(PDO::FETCH_ASSOC))
+		{
+			$nome = $res['nome'];
+			$tel = $res['telefone'];
+			$email = $res['email'];
+		}
 	}
 
 	public function excluirDado($id){

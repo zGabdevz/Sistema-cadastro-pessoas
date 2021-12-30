@@ -28,23 +28,30 @@ include('conexao.php');
             <?php
 				if(isset($_POST["submit"]) AND empty($nome) ):
 			?>
-				<p>Preencha todos os campos!</p>
+				<p style="color: red;">Preencha todos os campos!</p>
 			<?php
 				endif;
 			?>
 			<!--------Verifica campo vazio---------->
 
+			<!--------Editar dados---------->
+			<?php	
+				$id = $_GET["editar_id"];
+				$conn->editarDado($id);
+			?>
+			<!--------Editar dados---------->
+
 			<form action="" method="POST"><!--------FORMULARIO DE CADASTRO---------->
 				<label for="nome">Nome: </label><br>
-				<input type="name" name="nome" placeholder="Digite.." />
+				<input type="name" name="nome" value="<?php if(isset($res)){echo $nome;} ?>" />
 				  <br>
 				<label for="telefone">Telefone: </label><br>
-				<input type="name" name="telefone" placeholder="Digite.."/>
+				<input type="name" name="telefone" value="<?php if(isset($res)){echo $tel;} ?>" />
 				  <br>
 				<label for="nome">E-mail: </label><br>
-				<input type="email" name="email" placeholder="Digite.."/>
+				<input type="email" name="email" value="<?php if(isset($res)){echo $email;} ?>" />
 				  <br>
-				<input type="submit" name="submit"/><!--------FORMULARIO DE CADASTRO---------->
+				<input type="submit" name="submit" value="<?php if(isset($res)){echo "Atualizar";} else{echo "Cadastrar";} ?>"/><!--------FORMULARIO DE CADASTRO---------->
 			</form>
 
 			<!--------Cadastrar pessoa---------->
@@ -81,5 +88,13 @@ include('conexao.php');
 			</div>
 		</div>
 	</div>
+
+
+	<footer>
+		<hr>
+		<p>Todos os direitos reservados à </p><a style="color: red;" href="https://github.com/zGabdevz">zGabdevz<a/>
+		<p> Feito e atualizado com dedicação</p>
+		<p>2022</p>
+	</footer>
 </body>
 </html>
